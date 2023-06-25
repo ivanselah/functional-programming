@@ -127,3 +127,4 @@ console.log(result(10)); // 50
     console.log
   ); // 30000
 }
+ㅊ;
