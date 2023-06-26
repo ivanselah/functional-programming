@@ -73,4 +73,4 @@
 
 > #### 06 27 - day6
 
-- range, 지연 range
+- range, 지연 range, take
