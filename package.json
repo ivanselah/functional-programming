@@ -1,0 +1,16 @@
+{
+  "name": "functional-programming",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanselah/functional-programming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanselah/functional-programming/issues"
+  },
+  "homepage": "https://github.com/ivanselah/functional-programming#readme"
+}
