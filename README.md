@@ -74,3 +74,7 @@
 > #### 06 27 - day6
 
 - range, 지연 range, take
+
+> #### 06 28 - day7
+
+- 지연 map, filter

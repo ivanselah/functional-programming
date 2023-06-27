@@ -40,3 +40,14 @@ mapValue.set('hello', 10);
 mapValue.set('world', 20);
 
 console.log(new Map(map(([key, value]) => [key, value * 2], mapValue))); // {'hello' -> 20, 'world' -> 40}
+
+/* -- 지연 map 함수 -- */
+const L = {};
+L.map = function* (fn, iterator) {
+  for (const value of iterator) {
+    yield fn(value);
+  }
+};
+const resultLMap = L.map((value) => value * 2, [1, 2, 3]);
+console.log(resultLMap.next());
+console.log(...resultLMap);
