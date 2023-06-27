@@ -32,3 +32,16 @@ console.log(
 );
 
 products.filter((value) => value.price > 2000);
+
+/* -- 지연 filter 함수 -- */
+const L = {};
+L.filter = function* (fn, iterator) {
+  for (const value of iterator) {
+    if (fn(value)) {
+      yield value;
+    }
+  }
+};
+const resultLFilter = L.filter((value) => value % 2 === 0, [1, 2, 3, 4]);
+console.log(resultLFilter.next());
+console.log(...resultLFilter);
