@@ -86,3 +86,7 @@
 > #### 06 28 - day7
 
 - 지연 map, filter
+
+> #### 06 29 - day8
+
+- range, map, filter, take, reduce 중첩사용 - 1
