@@ -1,4 +1,5 @@
 /* -- 지금까지 사용한 함수 재정의 -- */
+
 const range = (l) => {
   let i = -1;
   const res = [];
@@ -81,3 +82,7 @@ L.filter = curry(function* (fn, iterator) {
     }
   }
 });
+
+const go = (...args) => {
+  reduce((args, fn) => fn(args), args);
+};
