@@ -37,3 +37,47 @@ const filter = curry((fn, iterator) => {
 });
 const conditionFn = (a) => a > 2;
 console.log(filter(conditionFn));
+
+const take = curry((length, iterator) => {
+  const res = [];
+  for (const value of iterator) {
+    res.push(value);
+    if (res.length === length) {
+      return res;
+    }
+  }
+});
+
+const reduce = curry((fn, acc, iterator) => {
+  if (!iterator) {
+    iterator = acc[Symbol.iterator]();
+    acc = iterator.next().value;
+  }
+  for (const value of iterator) {
+    acc = fn(acc, value);
+  }
+  return acc;
+});
+
+const L = {};
+
+L.range = function* (length) {
+  let i = -1;
+  while (++i < length) {
+    yield i;
+  }
+};
+
+L.map = curry(function* (fn, iterator) {
+  for (const value of iterator) {
+    yield fn(value);
+  }
+});
+
+L.filter = curry(function* (fn, iterator) {
+  for (const value of iterator) {
+    if (fn(value)) {
+      yield value;
+    }
+  }
+});

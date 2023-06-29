@@ -90,3 +90,7 @@
 > #### 06 29 - day8
 
 - range, map, filter, take, reduce 중첩사용 - 1
+
+> #### 06 30 - day9
+
+- range, map, filter, take, reduce 중첩사용 - 2
