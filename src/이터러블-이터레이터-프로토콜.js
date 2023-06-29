@@ -1,7 +1,13 @@
 /**
- - 이터러블 : 이터레이터를 리턴하는 [Symbol.iterator]() 를 가진 값
+ * [Symbol.iterator] key 로 접근 가능
+ - 이터러블(반복 가능한) : 이터레이터를 리턴하는 [Symbol.iterator]() 를 가진 값
  - 이터레이터 : { value, done } 객체를 리턴하는 next() 를 가진 값
  - 이터러블/이터레이터 프로토콜 : 이터러블을 for...of, 전개 연산자 등과 함께 동작하도록 한 규약
+
+    ex. arr[Symbol.iterator]() => Array Iterator {}
+    const arr = [1, 2, 3];
+    const iterator = arr[Symbol.iterator](); // 가능 
+    iterator.next(); // { value : 1, done : false }
  */
 
 const array = [1, 2, 3];
