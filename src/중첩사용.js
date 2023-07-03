@@ -101,6 +101,7 @@ go(
   console.log
 );
 
+/* 지연적으로 */
 /** 숫자 하나씩 실행됨 (세로로)
  *  0      1      2      3
  *  10     11     12     13
@@ -113,3 +114,20 @@ go(
   take(2),
   console.log
 );
+
+const join = curry((sep = ',', iterator) => reduce((acc, value) => `${acc}${sep}${value}`, iterator));
+
+const query = {
+  page: 1,
+  size: 10,
+  type: 'term',
+};
+
+const queryStr = (queryObj) =>
+  go(
+    queryObj,
+    Object.entries,
+    map(([key, value]) => `${key}=${value}`),
+    reduce((a, b) => `${a}&${b}`),
+    console.log
+  );

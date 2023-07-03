@@ -98,3 +98,4 @@
 > #### 07 04 - day10
 
 - L.range, L.map, L.filter, L.take 평가순서
+- callback 과 Promise
