@@ -94,3 +94,7 @@
 > #### 06 30 - day9
 
 - range, map, filter, take, reduce 중첩사용 - 2
+
+> #### 07 04 - day10
+
+- L.range, L.map, L.filter, L.take 평가순서

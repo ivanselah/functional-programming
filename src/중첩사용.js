@@ -86,3 +86,30 @@ L.filter = curry(function* (fn, iterator) {
 const go = (...args) => {
   reduce((args, fn) => fn(args), args);
 };
+
+/** 하나씩 순서대로 실행됨
+ * [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+ * [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+ * [11, 13, 15, 17, 19]
+ * [11, 13]
+ */
+go(
+  range(10),
+  map((n) => n + 10),
+  filter((n) => n % 2),
+  take(2),
+  console.log
+);
+
+/** 숫자 하나씩 실행됨 (세로로)
+ *  0      1      2      3
+ *  10     11     12     13
+ *  false  true   false  true
+ */
+go(
+  L.range(10),
+  L.map((n) => n + 10),
+  L.filter((n) => n % 2),
+  take(2),
+  console.log
+);
