@@ -106,6 +106,9 @@
 > #### 07 04 - day10
 
 - L.range, L.map, L.filter, L.take 평가순서
+
+#### 비동기:동시성 - 1
+
 - callback 과 Promise
 
 > #### 07 05 - day11
