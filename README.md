@@ -117,3 +117,7 @@
 > #### 07 06 - day12
 
 - kleisli composition 함수 합성(함수 합성을 안전하게 하는 규칙)
+
+> #### 07 07 - day13
+
+- Promise 가 중첩되어도 한번의 then 으로 사용
