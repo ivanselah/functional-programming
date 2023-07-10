@@ -11,9 +11,10 @@ const products = [
   },
 ];
 
-const map = (fn, iterator) => {
+// iter -> 이터러블 프로토콜을 따른다
+const map = (fn, iter) => {
   const res = [];
-  for (const value of iterator) {
+  for (const value of iter) {
     res.push(fn(value));
   }
   return res;
