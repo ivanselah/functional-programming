@@ -39,7 +39,8 @@ const products = [
 // 이전 함수의 결과값을 다음함수로 전달하는 함수
 // .ts 에서 타입추론이 어려움
 const go = (...args) => {
-  reduce((args, fn) => fn(args), args);
+  //ex. args [0, fn1, fn1, fn1, fn1]
+  reduce((a, fn1) => fn1(a), args);
 };
 
 const pipe =
