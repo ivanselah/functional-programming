@@ -38,15 +38,24 @@ const products = [
 /* -- go 함수 -- */
 // 이전 함수의 결과값을 다음함수로 전달하는 함수
 // .ts 에서 타입추론이 어려움
+// 즉시 값을 평가 할 때 사용
 const go = (...args) => {
   //ex. args [0, fn1, fn1, fn1, fn1]
   reduce((a, fn1) => fn1(a), args);
 };
 
+// 합성된 함수를 만드는 함수
+// ex. fn 첫번째 함수만 꺼냄
 const pipe =
   (fn, ...fs) =>
   (...as) =>
     go(fn(...as), ...fs);
+const testPipe = pipe(
+  (a, b) => a + b,
+  (a) => a + 10,
+  (a) => a + 100
+);
+testPipe(0, 1);
 
 go(
   0,
