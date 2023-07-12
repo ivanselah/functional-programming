@@ -41,10 +41,10 @@ const products = [
 // 즉시 값을 평가 할 때 사용
 const go = (...args) => {
   //ex. args [0, fn1, fn1, fn1, fn1]
-  reduce((a, fn1) => fn1(a), args);
+  return reduce((a, fn1) => fn1(a), args);
 };
 
-// 합성된 함수를 만드는 함수
+// 합성된 함수를 만드는 함수를 리턴
 // ex. fn 첫번째 함수만 꺼냄
 const pipe =
   (fn, ...fs) =>
