@@ -82,14 +82,14 @@ const f = pipe(
 
 /* -- curry 함수 --- */
 /* 좀더 편리하게 사용하기 위해 curry 로 감싼다 
-   처음 인자를 받지 않으면 함수를 리턴해서 인자를 받는다.
+   처음에 두번째 인자를 받지 않으면 함수를 다시 리턴해서 두번째 인자를 받는다.
 */
 
 // fn // curry로 감싼 함수
 const curry =
   (fn) =>
-  (conditionFn, ...args) => {
-    return args.length ? fn(conditionFn, ...args) : (...args) => fn(conditionFn, ...args);
+  (a, ...args) => {
+    return args.length ? fn(a, ...args) : (...args) => fn(a, ...args);
   };
 const mult = curry((a, b) => a * b);
 const result = mult(5);
